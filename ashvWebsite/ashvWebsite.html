@@ -1,405 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASHV | The Race of Talent</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASHV | The Race of Talent</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body{
-  font-family:'Poppins', sans-serif;
-  overflow-x:hidden;
-  color:#fff;
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      color: #fff;
+    }
 
-/* ---------- FIX BACKGROUND LAYERING ---------- */
-.video-bg{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  z-index:-3;
-}
+    /* ---------- FIX BACKGROUND LAYERING ---------- */
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -3;
+    }
 
-.video-bg video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position: top;
-  background:black;
-  object-position:center;
-}
+    .video-bg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      background: black;
+      object-position: center;
+    }
 
-.overlay{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.65);
-  z-index:-2;
-}
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: -2;
+    }
 
-/* Bring top bar to front */
-.top-bar{
-  position:relative;
-  z-index:5;
-}
+    /* Bring top bar to front */
+    .top-bar {
+      position: relative;
+      z-index: 5;
+    }
 
-/* Add space so top is visible */
-.hero{
-  padding-top:160px;
-}
+    /* Add space so top is visible */
+    .hero {
+      padding-top: 160px;
+    }
 
-/* Allow scrolling */
-body{
-  min-height:100vh;
-  overflow-y:auto;
-}
+    /* Allow scrolling */
+    body {
+      min-height: 100vh;
+      overflow-y: auto;
+    }
 
-/* Dark overlay */
-.overlay{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.65);
-  z-index:-1;
-}
+    /* Dark overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: -1;
+    }
 
-/* ---------- TOP BAR ---------- */
-.top-bar{
-  display:flex;
-  justify-content:flex-start;
-  align-items:center;
-  padding:12px 6%;
-  background:rgba(0,0,0,0.55);
-  backdrop-filter:blur(10px);
-}
+    /* ---------- TOP BAR ---------- */
+    .top-bar {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 12px 6%;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(10px);
+    }
 
-.logos{
-  display:flex;
-  gap:15px;
-  align-items:center;
-}
+    .logos {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
 
-.logo-box{
-  background:#fff;
-  color:#000;
-  padding:6px 10px;
-  border-radius:8px;
-  font-size:0.75rem;
-  font-weight:600;
-}
+    .logo-box {
+      background: #fff;
+      color: #000;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
 
-/* ---------- HERO ---------- */
-.hero{
-  text-align:center;
-  padding:90px 10% 70px;
-  animation:fadeIn 2s ease;
-}
+    /* ---------- HERO ---------- */
+    .hero {
+      text-align: center;
+      padding: 90px 10% 70px;
+      animation: fadeIn 2s ease;
+    }
 
-.hero h1{
-  font-family:'Cinzel', serif;
-  font-size:3.4rem;
-  color:#f5c16c;
-  text-shadow:0 0 30px rgba(245,193,108,0.9);
-}
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3.4rem;
+      color: #f5c16c;
+      text-shadow: 0 0 30px rgba(245, 193, 108, 0.9);
+    }
 
-.hero h2{
-  font-size:1.4rem;
-  font-weight:400;
-  color:#ddd;
-}
+    .hero h2 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #ddd;
+    }
 
-.divider{
-  width:140px;
-  height:3px;
-  background:#f5c16c;
-  margin:25px auto;
-  border-radius:20px;
-}
+    .divider {
+      width: 140px;
+      height: 3px;
+      background: #f5c16c;
+      margin: 25px auto;
+      border-radius: 20px;
+    }
 
-.hero p{
-  max-width:760px;
-  margin:auto;
-  font-size:1.05rem;
-  color:#ccc;
-  line-height:1.7;
-}
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      font-size: 1.05rem;
+      color: #ccc;
+      line-height: 1.7;
+    }
 
-/* ---------- ASSOCIATION ---------- */
-.association{
-  margin-top:45px;
-}
+    /* ---------- ASSOCIATION ---------- */
+    .association {
+      margin-top: 45px;
+    }
 
-.association span{
-  display:block;
-  margin-bottom:10px;
-  color:#bbb;
-}
+    .association span {
+      display: block;
+      margin-bottom: 10px;
+      color: #bbb;
+    }
 
-.toi{
-  display:inline-block;
-  background:#e10600;
-  padding:14px 28px;
-  font-family:'Cinzel', serif;
-  font-size:1.4rem;
-  font-weight:700;
-  box-shadow:0 0 25px rgba(225,6,0,0.7);
-}
+    .toi {
+      display: inline-block;
+      background: #e10600;
+      padding: 14px 28px;
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      box-shadow: 0 0 25px rgba(225, 6, 0, 0.7);
+    }
 
-/* ---------- COUNTDOWN TEXT ---------- */
-.countdown-text{
-  margin-top:40px;
-  font-size:1.3rem;
-  font-weight:600;
-  color:#f5c16c;
-  text-shadow:0 0 20px rgba(245,193,108,0.7);
-}
-/* ---------- TOP BAR ---------- */
-.top-bar{
-  display:flex;
-  justify-content:flex-start;
-  align-items:center;
-  padding:12px 6%;
-  background:rgba(0,0,0,0.55);
-  backdrop-filter:blur(10px);
-}
+    /* ---------- COUNTDOWN TEXT ---------- */
+    .countdown-text {
+      margin-top: 40px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #f5c16c;
+      text-shadow: 0 0 20px rgba(245, 193, 108, 0.7);
+    }
 
-.logos{
-  display:flex;
-  gap:30px;
-  align-items:center;
-}
+    /* ---------- TOP BAR ---------- */
+    .top-bar {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 12px 6%;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(10px);
+    }
 
-/* Logo images */
-.logo-img{
-  height:100px;
-  width:auto;
-  background:#fff;
-  padding:6px 10px;
-  border-radius:8px;
-  object-fit:contain;
-}
+    .logos {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
 
-/* Main MITS logo bigger */
-.main-logo{
-  height:55px;
-}
-/* ---------- BUTTONS ---------- */
-.buttons{
-  margin-top:45px;
-  display:flex;
-  justify-content:center;
-  gap:25px;
-  flex-wrap:wrap;
-}
+    /* Logo images */
+    .logo-img {
+      height: 100px;
+      width: auto;
+      background: #fff;
+      padding: 6px 10px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
 
-.btn{
-  padding:15px 38px;
-  border-radius:50px;
-  font-size:1.05rem;
-  font-weight:600;
-  border:2px solid #f5c16c;
-  background:transparent;
-  color:#f5c16c;
-  cursor:pointer;
-  transition:0.3s;
-  text-decoration:none;
-}
+    /* Main MITS logo bigger */
+    .main-logo {
+      height: 55px;
+    }
+
+    /* ---------- BUTTONS ---------- */
+    .buttons {
+      margin-top: 45px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 38px;
+      border-radius: 50px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border: 2px solid #f5c16c;
+      background: transparent;
+      color: #f5c16c;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+    }
 
 
 
-.btn:hover{
-  background:#f5c16c;
-  color:#000;
-  box-shadow:0 0 30px rgba(245,193,108,1);
-  transform:translateY(-4px) scale(1.03);
-}
+    .btn:hover {
+      background: #f5c16c;
+      color: #000;
+      box-shadow: 0 0 30px rgba(245, 193, 108, 1);
+      transform: translateY(-4px) scale(1.03);
+    }
 
-/* ---------- FOOTER ---------- */
-.footer{
-  margin-top:55px;
-  padding-bottom:30px;
-  text-align:center;
-  font-size:0.9rem;
-  color:#aaa;
-}
-/* FOOTER */
-footer{
-  background:#000;
-  padding:40px 10%;
-  text-align:center;
-}footer{
-  background:
-    linear-gradient(rgba(0,0,0,.9),rgba(0,0,0,1)),
-    url("footer-bg.jpg");
-  background-size:cover;
-  background-position:center;
-}
-footer i{
-  font-size:22px;
-  margin:0 10px;
-  color:#d4af37;
-}
+    /* ---------- FOOTER ---------- */
+    .footer {
+      margin-top: 55px;
+      padding-bottom: 30px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
 
-/* ---------- ANIMATION ---------- */
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(40px);}
-  to{opacity:1; transform:translateY(0);}
-}
+    /* FOOTER */
+    footer {
+      background: #000;
+      padding: 40px 10%;
+      text-align: center;
+    }
 
-/* ---------- MOBILE ---------- */
-@media(max-width:600px){
-  .hero h1{font-size:2.4rem;}
-  .hero h2{font-size:1.2rem;}
-  .countdown-text{font-size:1.1rem;}
-}
-</style>
+    footer {
+      background:
+        linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, 1)),
+        url("footer-bg.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    footer i {
+      font-size: 22px;
+      margin: 0 10px;
+      color: #d4af37;
+    }
+
+    /* ---------- ANIMATION ---------- */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ---------- MOBILE ---------- */
+    @media(max-width:600px) {
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .hero h2 {
+        font-size: 1.2rem;
+      }
+
+      .countdown-text {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 
 
-<!-- VIDEO BACKGROUND -->
-<div class="video-bg">
-  <video autoplay muted loop playsinline>
-    <source src="hbk.mp4" type="video/mp4">
-  </video>
-</div>
-
-<div class="overlay"></div>
-
-<!-- TOP BAR -->
-<div class="top-bar">
-  <div class="logos">
-    <img src="logo.jpeg" alt="MITS Logo" class="logo-img main-logo">
-    <img src="mtail.jpeg" alt="MITS Logo" class="logo-img main-logo">
-    <img src="pr.jpeg" alt="Title Sponsor" class="logo-img">
-    <h>Principle</h>
-    <img src="vice.jpeg" alt="Co Sponsor" class="logo-img">
-    <h>vice_principle</h>
-  </div>
-</div>
-
-
-<!-- HERO -->
-<div class="hero">
-  <h1>҉A҉҉S҉҉H҉҉V҉҉2҉҉K҉҉2҉҉6҉</h1>
-  <h2>the race of talent</h2>
-
-  <div class="divider"></div>
-
-  <p>
-    ASHV represents power, passion, and performance.  
-    A celebration where talent races beyond limits and creativity rides with courage.  
-    From legacy to future glory, the journey now leads towards  
-    <strong>ASHV 2K26</strong>.
-  </p>
-
-  <div class="association">
-    <span>Association with</span>
-    <div class="toi">THE TIMES OF INDIA</div>
+  <!-- VIDEO BACKGROUND -->
+  <div class="video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="../images/hbk.mp4" type="video/mp4">
+    </video>
   </div>
 
-  <div class="countdown-text">
-    Countdown to ASHV 2K26 Begins — February 2026!
+  <div class="overlay"></div>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="logos">
+      <img src="../images/logo.jpeg" alt="MITS Logo" class="logo-img main-logo">
+      <img src="../images/mtail.jpeg" alt="MITS Logo" class="logo-img main-logo">
+      <img src="../images/pr.jpeg" alt="Title Sponsor" class="logo-img">
+      <h>Principle</h>
+      <img src="../images/vice.jpeg" alt="Co Sponsor" class="logo-img">
+      <h>vice_principle</h>
+    </div>
   </div>
 
-  <div class="buttons">
-    <a href="https://www.ashv2k.in/" class="btn"> ▀▄▀▄▀▄  ♞ ASHV2K25 ▄▀▄▀▄▀</a>
-    <a href="https://ashv-2-k26-mits-event.vercel.app/" class="btn">▀▄▀▄▀▄ ♞ 𝓐𝓢𝓗𝓥2𝓚26  ▄▀▄▀▄▀ </a>
-    
-    
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>҉A҉҉S҉҉H҉҉V҉҉2҉҉K҉҉2҉҉6҉</h1>
+    <h2>the race of talent</h2>
+
+    <div class="divider"></div>
+
+    <p>
+      ASHV represents power, passion, and performance.
+      A celebration where talent races beyond limits and creativity rides with courage.
+      From legacy to future glory, the journey now leads towards
+      <strong>ASHV 2K26</strong>.
+    </p>
+
+    <div class="association">
+      <span>Association with</span>
+      <div class="toi">THE TIMES OF INDIA</div>
+    </div>
+
+    <div class="countdown-text">
+      Countdown to ASHV 2K26 Begins — February 2026!
+    </div>
+
+    <div class="buttons">
+      <a href="https://www.ashv2k.in/" class="btn"> ▀▄▀▄▀▄ ♞ ASHV2K25 ▄▀▄▀▄▀</a>
+      <a href="https://ashv-2-k26-mits-event.vercel.app/" class="btn">▀▄▀▄▀▄ ♞ 𝓐𝓢𝓗𝓥2𝓚26 ▄▀▄▀▄▀ </a>
+
+
+    </div>
+    <style>
+      .photo-container {
+        display: flex;
+        gap: 80px;
+        /* space between photos */
+        align-items: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+
+      .medium_photo {
+        width: 6cm;
+        height: 8cm;
+        border: 2px solid #000;
+        object-fit: cover;
+      }
+    </style>
+
+
+    <div class="photo-container">
+      <img src="../images/mits1.jpeg" class="medium_photo">
+      <img src="../images/mits3.jpeg" class="medium_photo">
+      <img src="../images/mits4.jpeg" class="medium_photo">
+      <img src="../images/mits2.jpeg" class="medium_photo">
+    </div>
+
   </div>
-  <style>
-    .photo-container{
-      display: flex;
-      gap: 80px; /* space between photos */
-      align-items: center;
-      margin-top: 50px;
-      margin-bottom:50px;
-    }
 
-    .medium_photo{
-      width: 6cm;
-      height: 8cm;
-      border: 2px solid #000;
-      object-fit: cover;
-    }
-  </style>
+  <div class="footer">
+    © ASHV | Powered by MITS • The Spirit of Champions
 
+    creator of the website
+  </div>
 
-<div class="photo-container">
-  <img src="mits1.jpeg" class="medium_photo">
-  <img src="mits3.jpeg" class="medium_photo">
-  <img src="mits4.jpeg" class="medium_photo">
-  <img src="mits2.jpeg" class="medium_photo">
-</div>
+  <!-- FOOTER -->
+  <footer>
+    <p>Follow Us</p>
+    <a href="https://www.instagram.com/" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
 
-</div>
+    <a href="https://www.linkedin.com/" target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
 
-<div class="footer">
-  © ASHV | Powered by MITS • The Spirit of Champions
+    <a href="https://www.facebook.com/" target="_blank">
+      <i class="fab fa-facebook"></i>
+    </a>
 
-  creator of the website
-</div>
+    <a href="https://twitter.com/" target="_blank">
+      <i class="fab fa-x-twitter"></i>
+    </a>
+    <h1> reach us</h1>
+    <h>
 
-<!-- FOOTER -->
-<footer>
-<p>Follow Us</p>
-<a href="https://www.instagram.com/" target="_blank">
-  <i class="fab fa-instagram"></i>
-</a>
+      Madanapalle Institute of Technology & Science
 
-<a href="https://www.linkedin.com/" target="_blank">
-  <i class="fab fa-linkedin"></i>
-</a>
+      Post Box No: 14, Kadiri Road
 
-<a href="https://www.facebook.com/" target="_blank">
-  <i class="fab fa-facebook"></i>
-</a>
+      Angallu (V), Madanapalle-517325
 
-<a href="https://twitter.com/" target="_blank">
-  <i class="fab fa-x-twitter"></i>
-</a>
-<h1> reach us</h1>
-<h>
-    
-Madanapalle Institute of Technology & Science
+      Annamayya District, Andhra Pradesh, India.
+    </h>
+    <h1> LOCATION </h1>
+    <div jstcache="52" class="place-card place-card-medium" style="width: 158px;">
+      <div jstcache="18" class="place-desc-medium" style="width:129px">
+        <div jstcache="19" class="place-name" jsan="7.place-name">Madanapalle institute of technology and Sciences</div>
+      </div>
+      <div class="google-maps-link"> <a aria-label="View larger map" target="_blank" jstcache="20"
+          href="https://maps.google.com/maps?ll=13.629615,78.478539&amp;z=12&amp;t=m&amp;hl=en&amp;gl=IN&amp;mapclient=embed&amp;cid=12498357159968234035"
+          jsaction="mouseup:placeCard.largerMap">View larger map</a> </div>
+    </div>
 
-Post Box No: 14, Kadiri Road
-
-Angallu (V), Madanapalle-517325
-
-Annamayya District, Andhra Pradesh, India.
-</h>
-<h1> LOCATION </h1>
-<div jstcache="52" class="place-card place-card-medium" style="width: 158px;"> <div jstcache="18" class="place-desc-medium" style="width:129px"> <div jstcache="19" class="place-name" jsan="7.place-name">Madanapalle institute of technology and Sciences</div> </div> <div class="google-maps-link"> <a aria-label="View larger map" target="_blank" jstcache="20" href="https://maps.google.com/maps?ll=13.629615,78.478539&amp;z=12&amp;t=m&amp;hl=en&amp;gl=IN&amp;mapclient=embed&amp;cid=12498357159968234035" jsaction="mouseup:placeCard.largerMap" >View larger map</a> </div> </div>
-
-<p>© ASHV 2K26 | Designed by College Tech Team</p>
-<h1> Creator of Website</h1>
-<a href="https://www.instagram.com/urs._.comrade_07?igsh=ZmN1bmNuMDAybWY2" target="_blank">
-  <i class="fab fa-instagram"></i>
-</a>
-<a href="https://www.linkedin.com/in/pradeep-kumar4477?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
-  <i class="fab fa-linkedin"></i>
-</a>
-</footer>
+    <p>© ASHV 2K26 | Designed by College Tech Team</p>
+    <h1> Creator of Website</h1>
+    <a href="https://www.instagram.com/urs._.comrade_07?igsh=ZmN1bmNuMDAybWY2" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/pradeep-kumar4477?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+      target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </footer>
 </body>
+
 </html>
